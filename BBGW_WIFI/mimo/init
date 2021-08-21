@@ -1,0 +1,3 @@
+cd /home/debian/18xx-ti-utils/wlconf
+./wlconf -i /lib/firmware/ti-connectivity/wl18xx-conf.bin -s wl18xx.ht.mode=0x0 -o /lib/firmware/ti-connectivity/wl18xx-conf.bin
+./wlconf -i /lib/firmware/ti-connectivity/wl18xx-conf.bin -s wl18xx.phy.number_of_assembled_ant2_4=0x02 -o /lib/firmware/ti-connectivity/wl18xx-conf.bin

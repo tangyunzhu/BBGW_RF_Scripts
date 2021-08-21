@@ -1,0 +1,56 @@
+参考网站: http://processors.wiki.ti.com/index.php/WL18xx_TX_Testing
+
+#如下2条指令需要在执行MIMO测试前运行(只需要执行一次即可)
+wlconf -i /lib/firmware/ti-connectivity/wl18xx-conf.bin -s wl18xx.ht.mode=0x0 -o /lib/firmware/ti-connectivity/wl18xx-conf.bin
+wlconf -i /lib/firmware/ti-connectivity/wl18xx-conf.bin -s wl18xx.phy.number_of_assembled_ant2_4=0x02 -o /lib/firmware/ti-connectivity/wl18xx-conf.bin
+
+#802.11n CH1(2412MHz) MIMO  TX Command
+calibrator wlan0 wl18xx_plt stop_tx
+calibrator wlan0 plt power_mode on
+
+calibrator wlan0 wl18xx_plt tune_channel 1 0 1
+
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 1 0 0 0 1 0 0 0 0
+
+calibrator wlan0 wl18xx_plt start_tx 300 27 4065 0 0 0 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+
+#802.11n CH7 MIMO  TX Command
+calibrator wlan0 wl18xx_plt stop_tx
+calibrator wlan0 plt power_mode on
+
+calibrator wlan0 wl18xx_plt tune_channel 7 0 1
+
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 7 0 0 0 1 0 0 0 0
+
+calibrator wlan0 wl18xx_plt start_tx 300 27 4065 0 0 0 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+
+#802.11n CH13 MIMO  TX Command
+calibrator wlan0 wl18xx_plt stop_tx
+calibrator wlan0 plt power_mode on
+
+calibrator wlan0 wl18xx_plt tune_channel 13 0 1
+
+calibrator wlan0 wl18xx_plt set_tx_power 20000 0 0 13 0 0 0 1 0 0 0 0
+
+calibrator wlan0 wl18xx_plt start_tx 300 27 4065 0 0 0 0 0 00:11:22:33:44:55 01:02:03:04:05:06 0
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+#802.11n MIMO RX Command
+#如下命令只需要执行一次
+wlconf -i /lib/firmware/ti-connectivity/wl18xx-conf.bin -s wl18xx.ht.mode=0x0 -o /lib/firmware/ti-connectivity/wl18xx-conf.bin
+wlconf -i /lib/firmware/ti-connectivity/wl18xx-conf.bin -s wl18xx.phy.number_of_assembled_ant2_4=0x02 -o /lib/firmware/ti-connectivity/wl18xx-conf.bin
+
+#CH1 MIMO RX
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 1 0 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+#CH7 MIMO RX
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 7 0 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+#CH13 MIMO RX
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 13 0 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02

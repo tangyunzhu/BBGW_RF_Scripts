@@ -1,0 +1,189 @@
+----------------------------------------------------b CH1 --------------------------------------------
+#802.11 b (11 Mbps) Receiving, Ch1, 2412 MHz Setting
+ifconfig wlan0 down
+sleep 1
+calibrator wlan0 plt power_mode on
+sleep 1
+calibrator wlan0 wl18xx_plt set_antenna_mode_24G 1 1 1 0 1 0
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 1 0 0
+sleep 1
+calibrator wlan0 wl18xx_plt start_tx 200 3 1000 0 0 0 0 0 00:00:DE:DE:BE:BE 12:34:56:78:90:AB 0
+sleep 1
+calibrator wlan0 wl18xx_plt stop_tx
+
+#start RX
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+calibrator wlan0 plt power_mode off
+
+
+----------------------------------------------------b CH13 --------------------------------------------
+#802.11 b (11 Mbps) Receiving, Ch13, 2472 MHz Setting
+ifconfig wlan0 down
+sleep 1
+calibrator wlan0 plt power_mode on
+sleep 1
+calibrator wlan0 wl18xx_plt set_antenna_mode_24G 1 1 1 0 1 0
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 13 0 0
+sleep 1
+calibrator wlan0 wl18xx_plt start_tx 200 3 1000 0 0 0 0 0 00:00:DE:DE:BE:BE 12:34:56:78:90:AB 0
+sleep 1
+calibrator wlan0 wl18xx_plt stop_tx
+
+
+#start RX
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+calibrator wlan0 plt power_mode off
+
+
+----------------------------------------------------g CH1 --------------------------------------------
+#802.11 g (6 Mbps) Receiving, Ch1, 2412 MHz Setting
+ifconfig wlan0 down
+sleep 1
+calibrator wlan0 plt power_mode on
+sleep 1
+calibrator wlan0 wl18xx_plt set_antenna_mode_24G 1 1 1 0 1 0
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 1 0 0
+sleep 1
+calibrator wlan0 wl18xx_plt start_tx 200 4 1000 0 0 0 0 0 00:00:DE:DE:BE:BE 12:34:56:78:90:AB 0
+sleep 1
+calibrator wlan0 wl18xx_plt stop_tx
+
+#start RX
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+calibrator wlan0 plt power_mode off
+
+
+
+----------------------------------------------------g CH13 --------------------------------------------
+#802.11 g (6 Mbps) Receiving, Ch1, 2472 MHz Setting
+ifconfig wlan0 down
+sleep 1
+calibrator wlan0 plt power_mode on
+sleep 1
+calibrator wlan0 wl18xx_plt set_antenna_mode_24G 1 1 1 0 1 0
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 13 0 0
+sleep 1
+calibrator wlan0 wl18xx_plt start_tx 200 4 1000 0 0 0 0 0 00:00:DE:DE:BE:BE 12:34:56:78:90:AB 0
+sleep 1
+calibrator wlan0 wl18xx_plt stop_tx
+
+
+#start RX
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+calibrator wlan0 plt power_mode off
+
+
+----------------------------------------------------n20 CH1 --------------------------------------------
+#802.11 n (6.5 Mbps) Receiving, Ch1, 2412 MHz Setting
+ifconfig wlan0 down
+sleep 1
+calibrator wlan0 plt power_mode on
+sleep 1
+calibrator wlan0 wl18xx_plt set_antenna_mode_24G 1 1 1 0 1 0
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 1 0 1
+sleep 1
+calibrator wlan0 wl18xx_plt start_tx 200 12 1000 0 0 0 0 0 00:00:DE:DE:BE:BE 12:34:56:78:90:AB 0
+sleep 1
+calibrator wlan0 wl18xx_plt stop_tx
+
+
+#start RX
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+calibrator wlan0 plt power_mode off
+
+----------------------------------------------------n20 CH13 --------------------------------------------
+#802.11 n (6.5 Mbps) Receiving, Ch13, 2472 MHz Setting
+ifconfig wlan0 down
+sleep 1
+calibrator wlan0 plt power_mode on
+sleep 1
+calibrator wlan0 wl18xx_plt set_antenna_mode_24G 1 1 1 0 1 0
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 13 0 1
+sleep 1
+calibrator wlan0 wl18xx_plt start_tx 200 12 1000 0 0 0 0 0 00:00:DE:DE:BE:BE 12:34:56:78:90:AB 0
+sleep 1
+calibrator wlan0 wl18xx_plt stop_tx
+sleep 1
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+#start RX
+calibrator wlan0 wl18xx_plt get_rx_stats
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+calibrator wlan0 plt power_mode off
+
+----------------------------------------------------n40 CH3 --------------------------------------------
+#802.11 n (13.5 Mbps) Receiving, Ch1, 2422 MHz Setting
+ifconfig wlan0 down
+sleep 1
+calibrator wlan0 plt power_mode on
+sleep 1
+calibrator wlan0 wl18xx_plt set_antenna_mode_24G 1 1 1 0 1 0
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 3 0 2
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 3 0 3
+sleep 1
+calibrator wlan0 wl18xx_plt start_tx 200 12 1000 0 0 0 0 0 00:00:DE:DE:BE:BE 12:34:56:78:90:AB 1
+sleep 1
+calibrator wlan0 wl18xx_plt stop_tx
+
+
+#start RX
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+calibrator wlan0 plt power_mode off
+
+----------------------------------------------------n40 CH9 --------------------------------------------
+#802.11 n (13.5 Mbps) Receiving, Ch9, 2462 MHz Setting
+ifconfig wlan0 down
+sleep 1
+calibrator wlan0 plt power_mode on
+sleep 1
+calibrator wlan0 wl18xx_plt set_antenna_mode_24G 1 1 1 0 1 0
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 9 0 2
+sleep 1
+calibrator wlan0 wl18xx_plt tune_channel 9 0 3
+sleep 1
+calibrator wlan0 wl18xx_plt start_tx 200 12 1000 0 0 0 0 0 00:00:DE:DE:BE:BE 12:34:56:78:90:AB 1
+sleep 1
+calibrator wlan0 wl18xx_plt stop_tx
+
+#start RX
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+calibrator wlan0 plt power_mode off

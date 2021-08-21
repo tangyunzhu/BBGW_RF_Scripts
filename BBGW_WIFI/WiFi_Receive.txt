@@ -1,0 +1,48 @@
+---------------------------------------------------- CH1 --------------------------------------------
+#start channel1 receive test
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 1 0 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+calibrator wlan0 wl18xx_plt get_rx_stats
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+
+---------------------------------------------------- CH7 --------------------------------------------
+#start channel7 receive test
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 7 0 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+calibrator wlan0 wl18xx_plt get_rx_stats
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx
+
+---------------------------------------------------- CH13--------------------------------------------
+#start channel7 receive test
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 13 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+calibrator wlan0 wl18xx_plt get_rx_stats
+
+#802.11n MIMO RX Command
+wlconf -i /lib/firmware/ti-connectivity/wl18xx-conf.bin -s wl18xx.ht.mode=0x0 -o /lib/firmware/ti-connectivity/wl18xx-conf.bin
+wlconf -i /lib/firmware/ti-connectivity/wl18xx-conf.bin -s wl18xx.phy.number_of_assembled_ant2_4=0x02 -o /lib/firmware/ti-connectivity/wl18xx-conf.bin
+
+#CH1 MIMO RX
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 1 0 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+#CH7 MIMO RX
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 7 0 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+#CH13 MIMO RX
+calibrator wlan0 plt power_mode on
+calibrator wlan0 wl18xx_plt tune_channel 13 0 0
+calibrator wlan0 wl18xx_plt start_rx 00:00:00:00:00:01 00:00:00:00:00:02
+
+#run the following command to stop RX testing
+calibrator wlan0 wl18xx_plt stop_rx

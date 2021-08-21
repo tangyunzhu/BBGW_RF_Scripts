@@ -1,0 +1,1 @@
+hcitool cmd 0x3f 0x188
